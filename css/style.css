@@ -124,7 +124,7 @@ a { color: inherit; text-decoration: none; }
 .point__item { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; background: #fbfaf6; border-top: 1px solid #eceee5; }
 .point__item--rev .point__body { order: 2; }
 .point__item--rev .point__img { order: 1; }
-.point__body { padding: 28px 16px 26px 24px; }
+.point__body { padding: 28px 12px 26px 16px; }
 .point__item--rev .point__body { padding: 28px 18px 26px 18px; }
 .point__num { display: inline-block; padding: 0 12px 2px 0; border-bottom: 1px solid var(--green); font-family: var(--serif-en); font-size: 34px; line-height: 1.2; color: var(--green-text); }
 .point__name { margin-top: 12px; font-size: 14px; font-weight: 600; line-height: 1.55; color: var(--green-dark); }
@@ -134,10 +134,10 @@ a { color: inherit; text-decoration: none; }
 /* キャンペーン */
 .campaign { padding: 44px 16px 0; text-align: center; background: linear-gradient(#f3ecd2 0%, #f1e8c9 55%, #ece5cb 100%); }
 .campaign__en { font-size: 17px; color: #7d836d; }
-.campaign__title { margin-top: 12px; font-size: 24px; font-weight: 500; color: var(--green-text); letter-spacing: 0.1em; }
+.campaign__title { margin-top: 12px; font-size: clamp(19px, 5.6vw, 24px); font-weight: 500; color: var(--green-text); letter-spacing: 0.1em; }
 .campaign__sub { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 10px 0; font-size: 13px; color: #7d836d; }
 .campaign__sub::before, .campaign__sub::after { content: ""; flex: 1; height: 1px; background: #c8c4a6; }
-.campaign__coupon { font-size: 24px; font-weight: 600; color: var(--green-text); letter-spacing: 0.04em; line-height: 1.5; }
+.campaign__coupon { font-size: clamp(19px, 5.6vw, 24px); font-weight: 600; color: var(--green-text); letter-spacing: 0.04em; line-height: 1.5; }
 .campaign__coupon::before { content: "\FF3C"; margin-right: 4px; }
 .campaign__coupon::after { content: "\FF0F"; margin-left: 4px; }
 .campaign__present { margin-top: 6px; font-size: 17px; color: var(--green-text); letter-spacing: 0.04em; }
@@ -207,3 +207,10 @@ a { color: inherit; text-decoration: none; }
 .demo-dialog::backdrop { background: rgba(60, 70, 45, 0.45); }
 .demo-dialog__title { margin-bottom: 8px; font-size: 18px; font-weight: 500; color: var(--green-text); letter-spacing: 0.06em; }
 .demo-dialog__text { margin-bottom: 20px; font-size: 13px; }
+
+/* 改行の調整: 文末の1〜2文字だけが下の行に落ちないようにする */
+html { word-break: auto-phrase; }
+.point__name, .campaign__coupon, .sub__title, .steps__text { text-wrap: balance; }
+.point__text, .sub__lead, .detail__table td { text-wrap: pretty; }
+.steps__text { line-break: strict; }
+.nowrap { white-space: nowrap; }
