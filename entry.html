@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>キャンペーン応募フォーム | LUMIÈRE BOTANICAL</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="lp sub">
+  <header class="sub__head"><a class="en" href="index.html">LUMIÈRE BOTANICAL</a></header>
+  <main class="sub__main">
+    <p class="sub__center"><span class="demo-badge">DEMO</span></p>
+    <h1 class="sub__title">キャンペーン応募フォーム</h1>
+    <p class="sub__lead">必要事項をご入力ください。<br>※デモのため、入力内容は送信・保存されません。</p>
+
+    <form class="form" id="entry-form" novalidate>
+      <div class="field">
+        <label for="name">お名前<span class="req">必須</span></label>
+        <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+        <p class="field__error" id="name-error" role="alert"></p>
+      </div>
+      <div class="field">
+        <label for="email">メールアドレス<span class="req">必須</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+        <p class="field__error" id="email-error" role="alert"></p>
+      </div>
+      <div class="field">
+        <label for="instagram">Instagramアカウント名<span class="req">必須</span></label>
+        <input id="instagram" name="instagram" type="text" autocomplete="off" autocapitalize="off" placeholder="@account_name" required aria-describedby="instagram-hint instagram-error">
+        <p class="field__hint" id="instagram-hint">当選のご連絡はDMで行います。</p>
+        <p class="field__error" id="instagram-error" role="alert"></p>
+      </div>
+      <button class="btn" type="submit">応募する</button>
+    </form>
+    <a class="back" href="index.html">トップへ戻る</a>
+  </main>
+</div>
+<script src="js/form.js"></script>
+</body>
+</html>
